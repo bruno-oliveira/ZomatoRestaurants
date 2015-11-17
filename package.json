@@ -11,10 +11,13 @@
     "mongoose": "~4.1.7",
     "python-shell": "0.2.0"
   },
-"scripts" : {
-   "start" : "server.js"
-},
-"engines" : {
+  "scripts": {
+    "start": "server.js"
+  },
+  "engines": {
     "node": "0.10.25"
+  },
+  "devDependencies": {
+    "angular-smart-table": "^2.1.5"
   }
 }

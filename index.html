@@ -200,9 +200,34 @@
                         <div class="input-group">
                             <input id="cityname" type="text" class="form-control" placeholder="Restaurants in...">
 	      <span class="input-group-btn">
-		<button ng-click="GetCities(cityname);GetRestaurantsList(cityname);" class="btn btn-default" type="button">Search!</button>
+		<button ng-click="GetCities(cityname);" class="btn btn-default" type="button">Search!</button>
 	      </span>
                         </div><!-- /input-group -->
+                        <p id="estado" hidden>Searching...</p>
+                        <p></p>
+                        <p></p>
+
+                        <table id="restaurantes" st-table="restName" class="table table-striped" hidden>
+                            <thead>
+                            <tr>
+                                <th>Restaurant name</th>
+                                <th>Cuisine</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="x in restName">
+                                <td><a href={{x.restaurant.url}} >
+                                    <div style="height:100%;width:100%">
+                                        {{ x.restaurant.name }}
+                                    </div>
+                                </a></td>
+                                <td>{{ x.restaurant.cuisines }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <p></p>
+                        <p></p>
 
                     </div>
                 </div>
