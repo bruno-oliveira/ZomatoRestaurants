@@ -9,3 +9,5 @@ restaurant to go to.
 In future releases of this app, the idea will be to have a google-maps like interface available that lets the user see which
 restaurants are closer to its current location, introduced by setting a marker on the map and showing all the restaurants in a 
 fixed distance (1,2 or 5km) of that same marker.
+
+It's also expected that some work can be done to index more international locations, such as Paris, Rome, London, amongst other famous european cities, but, it will be a work in progress.
