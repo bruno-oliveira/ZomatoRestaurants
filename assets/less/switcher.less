@@ -1,0 +1,52 @@
+ // Preset Loader
+@import "presets.less";
+
+.switcher-area{
+	position: fixed;
+	width: 300px;
+	left: 0;
+	top: 155px;
+	left: -300px;
+	z-index: 9999;
+	background: #fff;
+	padding: 25px 20px;
+	-webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    h4{
+    	margin-top: 0;
+    	text-align: center;
+    	margin-bottom: 30px;
+    }
+    ul{
+    	margin: 0;
+    	li{
+    		display: inline-block;
+    		font-size: 0;
+    		list-style: none;
+    		margin-right: 2px; 
+    		a{
+    			display: block;
+    			height: 55px;
+    			width: 60px;
+    		}
+    	}
+    }
+    .switcher-btn-area{
+    	display: block;
+    	position: relative;
+    	button.switcher-btn{
+    		position: absolute;
+    		top: -102px;
+    		right: -70px;    		
+    		width: 50px;
+            background: #fff;
+            border: none;
+            outline: 0;
+            padding: 7px 0;
+    		i{
+    			font-size: 25px;
+    		}
+    	}
+    }
+}

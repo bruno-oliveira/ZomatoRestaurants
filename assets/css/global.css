@@ -1,0 +1,161 @@
+@import "http://fonts.googleapis.com/css?family=Roboto:300,700";
+/*You can add your won color also */
+body {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+  font-style: normal;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+a {
+  color: #3d566e;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+a:hover {
+  color: #26303a;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.row {
+  padding: 80px 0px;
+}
+.btn {
+  border: none;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  text-transform: uppercase;
+}
+.btn i {
+  margin-right: 10px;
+}
+.btn-common {
+  background: #3d566e;
+  color: #fff;
+}
+.btn-common:hover {
+  background: #26303a;
+  color: #fff;
+}
+.btn-border,
+.btn-common-white:hover {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.btn-common-white,
+.btn-border:hover {
+  background: #fff;
+  color: #444;
+  border: 1px solid #fff;
+}
+.social i {
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 10px;
+  line-height: 25px;
+  margin-right: 5px;
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  border-radius: 100%;
+}
+.social i:hover {
+  border: 2px solid transparent;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.social .social-links a:hover {
+  color: #fff;
+}
+.social .fa-facebook:hover {
+  background: #3b5998;
+  color: #fff;
+}
+.social .fa-twitter:hover {
+  background: #00CAFB;
+  color: #fff;
+}
+.social .fa-google-plus:hover {
+  background: #D23A1D;
+  color: #fff;
+}
+.social .fa-linkedin:hover {
+  background: #007bb6;
+  color: #fff;
+}
+.social .fa-dribbble:hover {
+  background: #ea4c89;
+  color: #fff;
+}
+.social .fa-github:hover {
+  background: #171515;
+  color: #fff;
+}
+.section-title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+}
+.section-subtitle {
+  text-align: center;
+  font-weight: 300;
+  padding-bottom: 30px;
+  position: relative;
+  color: #bdc3c7;
+}
+.widget-title {
+  color: #ccc;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+/* Style switcher code */
+.presets {
+  padding: 3px;
+  position: fixed;
+  bottom: 0;
+  right: 0px;
+  background: #fff;
+  z-index: 9999;
+  box-shadow: 7px 7px 0 rgba(44, 62, 80, 0.6);
+}
+.presets a {
+  display: inline;
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin: 3px;
+}
+.presets .mblue-preset {
+  color: #3d566e;
+}
+.presets .blue-preset {
+  color: #2C7EB6;
+}
+.presets .green-preset {
+  color: #16a085;
+}
+.presets .red-preset {
+  color: #e74c3c;
+}
+.matter_portfolio .mix {
+  display: none;
+}

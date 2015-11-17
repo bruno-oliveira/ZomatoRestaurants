@@ -1,0 +1,104 @@
+a {
+  color: #e8e8e8;
+}
+a:hover {
+  color: #e8e8e8;
+}
+
+.btn-common {
+  background: #e8e8e8;
+}
+.btn-common:hover {
+  background: #e8e8e8;
+}
+
+.navbar .to-top a, .navbar .to-bottom a{color: #e8e8e8;}
+
+#carousel-area .carousel-inner:before{background-color: rgba(240,240,240, 0.85);}
+
+#services .services-intro .f-icon{color: #e8e8e8;}
+
+#testimonial .carousel-indicators li, #testimonial .carousel-indicators li.active{border-color: #e8e8e8;}
+
+#contact,
+#portfolio,
+#clients {
+  background-color: #e8e8e8;
+}
+
+
+#services h3,
+#services .srvice {
+  color: #e8e8e8;
+}
+#services .service {
+  background: #e8e8e8;
+}
+
+
+#why {
+  background: #e8e8e8;
+}
+
+#why .rotate {
+  color: #e8e8e8;
+}
+
+.pricing ul li.price {
+  background: #e8e8e8;
+}
+
+
+#portfolio {
+  background-color: #e8e8e8;
+}
+
+.portfolio-item .icons .link i {
+  background: #e8e8e8;
+}
+
+.portfolio-item .icons .preview i {
+  color: #e8e8e8;
+}
+
+#testimonial .carousel-indicators li.active {
+  background-color: #e8e8e8;
+}
+
+#testimonial .name {
+  color: #e8e8e8;
+}
+#testimonial .company {
+  color: #e8e8e8;
+}
+.owl-theme .owl-controls  .owl-page:hover span,
+.owl-theme .owl-controls  .owl-page.active span{
+  background: #e8e8e8;
+}
+
+#team .team-member:hover {
+  border-bottom: 5px solid #e8e8e8;
+}
+#team .team-member .face .overlay{
+  background: rgba(240,240,240, 0.85);
+}
+#team .team-member:hover h3,
+#team .team-member:hover .overlay {
+  color: #e8e8e8;
+  opacity: 1;
+}
+#team .team-member:hover .social-team .social i {
+  background: #e8e8e8;
+}
+#matter-footer .gallery li .icon{
+  background: rgba(240,240,240, 0.85);
+}
+#copyright {background: #e8e8e8;color: #f000ff;}
+
+/*Selection color*/
+::selection {
+  background: #e8e8e8; /* Safari/Chrome */
+  }
+::-moz-selection {
+  background: #e8e8e8; /* Firefox */
+}

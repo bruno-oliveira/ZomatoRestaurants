@@ -1,0 +1,96 @@
+  // Preset Loader
+  @import "presets.less";
+
+  //Nav Bar Styles
+  .navbar{margin-bottom: 0; li{color: #d1d1d1;}}
+
+  // .navbar-default .navbar-nav > li > a:hover, .navbar-default 
+
+  .navbar-default {
+    border: none;
+    border-radius: 0;
+    background: none;
+    .navbar-brand {
+    padding: 0;
+    margin: 0;
+  }
+  .navbar-nav li a, .navbar-nav > li > a:focus {
+    font-size: 14px;
+    padding: 0px 0px 5px;
+    text-transform: uppercase;
+    margin: 22px 15px;
+    outline: 0;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .navbar-nav > li > a:after{
+    content: "";
+    display: inline-block;
+    width: 0%;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    -webkit-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    -moz-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    -o-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  }
+  .navbar-nav > li > a:hover:after {
+    width: 100%;
+  }
+  .navbar-nav > .active > a, 
+  .navbar-nav>li>a:hover,
+  .navbar-nav>li>a:focus
+  .navbar-nav > .active > a:hover,
+  .navbar-nav > .active > a:focus, 
+  .navbar-nav>.active>a, 
+  .navbar-nav>.active>a:hover, 
+  .navbar-nav>.active>a:focus
+  .current {
+    background: none;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+  }
+
+  .navbar-brand {
+    font-size: 55px;
+  }
+
+  .navbar-toggle{
+    .icon-bar{background: #fff;}
+    &:hover, &:focus{background: #333;}
+  }
+  }
+
+  .affix.navbar-default{
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .affix{
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+  }
+  .affix .navbar-brand img{width: 80%;}
+  .affix .navbar-nav li a, .affix .navbar-nav li a:focus{margin: 15px;}
+  .affix .to-top a, .affix .to-bottom a{line-height: 56px; padding: 20px;}
+
+  //Scrolling Arrow
+  .navbar .to-top, .navbar .to-bottom{display: none;}
+
+  .affix-top .to-bottom{display: block !important;}
+
+  .affix .to-top{display: block !important;}
+
+  .to-top, .to-bottom{list-style: none;}
+
+  .to-top a, .to-bottom a{
+  padding: 26px 22px;
+  line-height: 70px;
+  outline: 0;
+  color: #fff;
+  }

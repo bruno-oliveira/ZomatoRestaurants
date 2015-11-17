@@ -1,0 +1,20 @@
+{
+  "name": "Zomato",
+  "version": "0.0.0",
+  "dependencies": {
+    "body-parser": "~1.14.0",
+    "cors": "~2.7.1",
+    "express": "~4.13.3",
+    "grunt": "~0.4.5",
+    "nodemailer": "~0.6.5",
+    "xmlbuilder": "~3.1.0",
+    "mongoose": "~4.1.7",
+    "python-shell": "0.2.0"
+  },
+"scripts" : {
+   "start" : "server.js"
+},
+"engines" : {
+    "node": "0.10.25"
+  }
+}

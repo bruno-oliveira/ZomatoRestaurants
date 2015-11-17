@@ -1,0 +1,104 @@
+a {
+  color: #2C7EB6;
+}
+a:hover {
+  color: #31729C;
+}
+
+.btn-common {
+  background: #2C7EB6;
+}
+.btn-common:hover {
+  background: #31729C;
+}
+
+.navbar .to-top a, .navbar .to-bottom a{color: #fff;}
+
+#carousel-area .carousel-inner:before{background-color: rgba(9, 92, 150, 0.7);}
+
+#services .services-intro .f-icon{color: #2C7EB6;}
+
+#testimonial .carousel-indicators li, #testimonial .carousel-indicators li.active{border-color: #2C7EB6;}
+
+#contact,
+#portfolio,
+#clients {
+  background-color: #2C7EB6;
+}
+
+
+#services h3,
+#services .srvice {
+  color: #2C7EB6;
+}
+#services .service {
+  background: #2C7EB6;
+}
+
+
+#why {
+  background: #2C7EB6;
+}
+
+#why .rotate {
+  color: #2C7EB6;
+}
+
+.pricing ul li.price {
+  background: #2C7EB6;
+}
+
+
+#portfolio {
+  background-color: #2C7EB6;
+}
+
+.portfolio-item .icons .link i {
+  background: #2C7EB6;
+}
+
+.portfolio-item .icons .preview i {
+  color: #2C7EB6;
+}
+
+#testimonial .carousel-indicators li.active {
+  background-color: #2C7EB6;
+}
+
+#testimonial .name {
+  color: #2C7EB6;
+}
+#testimonial .company {
+  color: #2C7EB6;
+}
+.owl-theme .owl-controls  .owl-page:hover span,
+.owl-theme .owl-controls  .owl-page.active span{
+  background: #2C7EB6;
+}
+
+#team .team-member:hover {
+  border-bottom: 5px solid #2C7EB6;
+}
+#team .team-member .face .overlay{
+  background: rgba(9, 92, 150, 0.7);
+}
+#team .team-member:hover h3,
+#team .team-member:hover .overlay {
+  color: #2C7EB6;
+  opacity: 1;
+}
+#team .team-member:hover .social-team .social i {
+  background: #2C7EB6;
+}
+#matter-footer .gallery li .icon{
+  background: rgba(9, 92, 150, 0.7);
+}
+#copyright {background: #2C7EB6;color: #fff;}
+
+/*Selection color*/
+::selection {
+  background: #2C7EB6; /* Safari/Chrome */
+  }
+::-moz-selection {
+  background: #2C7EB6; /* Firefox */
+}

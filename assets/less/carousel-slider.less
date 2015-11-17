@@ -1,0 +1,38 @@
+	// Preset Loader
+	@import "presets.less";
+
+	//carousel/slider
+	#carousel-area{
+			overflow: hidden; background: #2c3e50;						
+			.carousel-inner{
+			&:before {
+			background-color: @mblue-slider;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			bottom: 0;
+			content: "";
+			display: block;
+			z-index: 9;
+			}
+		}
+
+		.item{
+			background-attachment: fixed; background-size: 100%; background-size: cover;
+			.carousel-caption{
+				top: 30%; right: 10%; left: 10%;
+				h1{font-size: 65px; font-weight: 300;}
+				h2{font-size: 30px; font-weight: 100;}
+				.btn{padding: 10px 20px; margin: 10px 20px; font-size: 20px;}
+				text-shadow: none;
+				z-index: 99;
+			}
+		}
+
+		.carousel-control{
+		z-index: 10;display: none; width: 50px; height: 80px; top: 50%; padding: 10px 5px; box-shadow: none; background-image: none; background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		&:hover .carousel-control{display: block;}
+	}

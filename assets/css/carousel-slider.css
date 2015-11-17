@@ -1,0 +1,55 @@
+/*You can add your won color also */
+#carousel-area {
+  overflow: hidden;
+  background: #2c3e50;
+}
+#carousel-area .carousel-inner:before {
+  background-color: rgba(44, 62, 80, 0.8);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  content: "";
+  display: block;
+  z-index: 9;
+}
+#carousel-area .item {
+  background-attachment: fixed;
+  background-size: 100%;
+  background-size: cover;
+}
+#carousel-area .item .carousel-caption {
+  top: 30%;
+  right: 10%;
+  left: 10%;
+  text-shadow: none;
+  z-index: 99;
+}
+#carousel-area .item .carousel-caption h1 {
+  font-size: 65px;
+  font-weight: 300;
+}
+#carousel-area .item .carousel-caption h2 {
+  font-size: 30px;
+  font-weight: 100;
+}
+#carousel-area .item .carousel-caption .btn {
+  padding: 10px 20px;
+  margin: 10px 20px;
+  font-size: 20px;
+}
+#carousel-area .carousel-control {
+  z-index: 10;
+  display: none;
+  width: 50px;
+  height: 80px;
+  top: 50%;
+  padding: 10px 5px;
+  box-shadow: none;
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#carousel-area:hover .carousel-control {
+  display: block;
+}

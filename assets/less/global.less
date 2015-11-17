@@ -1,0 +1,178 @@
+  //Google font Loader
+  @import "http://fonts.googleapis.com/css?family=Roboto:300,700";
+
+  // Preset Loader
+  @import "presets.less";
+
+
+  //Body Global Styles
+  body {
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    font-style: normal;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  a{
+    color: @preset;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    &:hover{color: @preset-dark;}
+  }
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .row {
+    padding: 80px 0px;
+  }
+
+  //Custom Button Styles
+  .btn{
+    border: none;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    text-transform: uppercase;
+    i{margin-right: 10px;}
+  }
+
+  .btn-common{
+    background: @preset;
+    color: #fff;
+
+    &:hover{
+    background: @preset-dark;
+    color: #fff;
+  }
+  }
+
+  .btn-border, .btn-common-white:hover{
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  }
+
+  .btn-common-white, .btn-border:hover{
+  background: #fff;
+  color: #444;
+  border: 1px solid #fff;
+  }
+
+  // Social icon
+  .social i{
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px;
+    line-height: 25px;
+    margin-right: 5px;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    border-radius: 100%;
+    &:hover{
+      border: 2px solid transparent;
+      -webkit-animation-name: fadeIn;
+      animation-name: fadeIn;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+  }
+  .social .social-links a:hover {
+      color: #fff;
+  }
+
+  .social .fa-facebook:hover {
+      background: #3b5998;
+      color: #fff;
+  }
+
+  .social .fa-twitter:hover {
+      background: #00CAFB;
+      color: #fff;
+  }
+
+  .social .fa-google-plus:hover {
+      background: #D23A1D;
+      color: #fff;
+  }
+
+  .social .fa-linkedin:hover {
+      background: #007bb6;
+      color: #fff;
+  }
+
+  .social .fa-dribbble:hover {
+      background: #ea4c89;
+      color: #fff;
+  }
+
+  .social .fa-github:hover {
+      background: #171515;
+      color: #fff;
+  }
+  //Section Titles
+  .section-title{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  //Section Subtitle
+  .section-subtitle{
+    text-align: center;
+    font-weight: 300;
+    padding-bottom: 30px;
+    position: relative;
+    color: #bdc3c7;
+  }
+  // widget-title
+  .widget-title{
+    color: #ccc;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 300;
+  }
+
+
+  /* Style switcher code */
+
+  .presets{
+    padding:3px;
+    position:fixed;
+    bottom:0;
+    right:0px;
+    background:#fff;
+    z-index:9999;
+    box-shadow: 7px 7px 0 rgba(44, 62, 80, 0.6);
+    a{
+    display:inline;
+    float: left;
+    width:15px;
+    height:15px;
+    margin:3px;
+  }
+  .mblue-preset{color: #3d566e;}
+  .blue-preset{color: #2C7EB6;}
+  .green-preset{color: #16a085;}
+  .red-preset{color: #e74c3c;}
+
+  }
+
+  // MixItUp Style
+  .matter_portfolio .mix{
+    display: none;
+  }
