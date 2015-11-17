@@ -63,8 +63,10 @@ app.post("/restlist",function(req,resp){
         if (err) throw err;
         // results is an array consisting of messages collected during execution
         console.log('results of list: %j', results);
-        var response = results[0].replace(/\\"/g, "\"");
-        resp.send(JSON.parse(response));
+       // var response = results[0].replace(/\\"/g, "\"");
+        var response = results[0].replace(/, \\"/g, ", \"");
+        var response2 = response.replace(/\\":/g, "\":");
+        resp.send(JSON.parse(response2));
     });
 });
     /*
