@@ -1,7 +1,6 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngMap']);
 
 app.controller('RestaurantCtrl', function($scope,$http) {
-
     var cityID = -1;
     $scope.GetCities=function(city) {
         document.getElementById("restaurantes").removeAttribute("hidden");
@@ -20,7 +19,15 @@ app.controller('RestaurantCtrl', function($scope,$http) {
             })
 
         })
-    }
+    };
+
+
+
+});
+
+
+app.controller('MapsCtrl', function($scope,$http) {
+    this.address = "Toronto Canada";
 
 });
 
