@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>
         RestaurantMaps - Find your way to food
     </title>
@@ -238,9 +238,23 @@
 
                       <div class="col-md-2"></div>
 
-                      <div class="col-md-6" style="margin-top:3%">
+                      <div ng-controller="MapsCtrl as vm">
+                      <div class="col-md-6" style="margin-top:1%">
+                          <p>Origem: <input id="local" ng-model="vm.address" placeholder="Origem..."/></p>
                         <div map-lazy-load="http://maps.google.com/maps/api/js">
-                            <map center="37,8" zoom="3"></map>
+                            <ng-map center="{{vm.address}}" zoom="10">
+                                <shape name="circle" no-watcher="true"
+                                       stroke-color="#FF0000"
+                                       stroke-opacity="0.8"
+                                       stroke-weight="2"
+                                       fill-color="#FF0000"
+                                       fill-opacity="0.35"
+                                       center="{{vm.address}}"
+                                       editable="true"
+                                       radius="5">
+                                </shape>
+                            <marker position="{{vm.address}}" title="{{address}}" visible="false"></marker>
+                            </ng-map>
                         </div>
                       </div>
                 </div>
@@ -532,6 +546,9 @@
 
 <script src="http://maps.google.com/maps/api/js"></script>
 <script src="assets/js/ng-map.min.js"></script>
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChdumDrFouGmTilavqf8yJQcnnupkxJOs&libraries=geometry">
+</script>
 
 <script src="assets/frontend/app.js"></script>
 <script src="db/db_cities_model.js"></script>
