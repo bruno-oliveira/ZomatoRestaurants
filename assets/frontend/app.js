@@ -27,7 +27,10 @@ app.controller('RestaurantCtrl', function($scope,$http) {
 
 
 app.controller('MapsCtrl', function($scope,$http) {
-    this.address = "Toronto Canada";
+
+        this.address=document.getElementById("local").value;
+
+
 
 });
 
