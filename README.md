@@ -11,3 +11,5 @@ restaurants are closer to its current location, introduced by setting a marker o
 fixed distance (1,2 or 5km) of that same marker.
 
 It's also expected that some work can be done to index more international locations, such as Paris, Rome, London, amongst other famous european cities, but, it will be a work in progress.
+
+ [*] As of, today, 18th Nov, the application has the angularMaps integrated, now, it's working on top of the ngMap framework.
