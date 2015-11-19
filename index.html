@@ -239,14 +239,11 @@
 
                       <div class="col-md-2"></div>
 
-                      <div ng-controller="MapsCtrl as vm" ng-init="initMap();">
-                      <div class="col-md-6" style="margin-top:1%">
-                          <p>Origem: <input id="local" ng-model="vm.address" placeholder="Origem..."/></p>
-                          <div id="map">
-
-                          </div>
+                      <div ng-controller="RestaurantCtrl2" id="rests">
+                          <input id="pac-input" class="controls" type="text"
+                                 placeholder="Enter a location...">
                       </div>
-                </div>
+                      <div id="map"></div>
 
                     </div>
                 </div>
@@ -268,192 +265,6 @@
     </div>
     </div>
 </section>
-<!-- Service Section End -->
-
-
-<!-- About Section -->
-
-<section id="about">
-    <div class="about-inner">
-        <div class="container">
-            <div class="row">
-                <h1 class="section-title">
-                    About us
-                </h1>
-                <h2 class="section-subtitle">
-                    Know Our Progress
-                </h2>
-                <div class="col-md-5">
-                    <div class="wow fadeInUpQuick">
-                        <div id="about-slider" class="owl-carousel">
-                            <!-- Wrapper for slides -->
-                            <div class="item">
-                                <img src="assets/img/about/img1.jpg" alt="...">
-                            </div>
-                            <div class="item">
-                                <img src="assets/img/about/img2.jpg" alt="...">
-                            </div>
-                            <div class="item">
-                                <img src="assets/img/about/img3.jpg" alt="...">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-7 wow fadeInRightQuick" data-wow-delay="0.5s">
-                    <h2 class="about-title">
-                        We turn your dream into reality
-                    </h2>
-                    <p>
-                        A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit.
-                        <br>
-                    </p>
-                    <a href="#home" class="btn btn-lg btn-border">
-                        <i class="fa fa-info"></i>
-                        Learn more
-                    </a>
-                    <a href="#why-choose" class="btn btn-lg btn-common-white">
-                        <i class="fa fa-question"></i>
-                        Why choose us?
-                    </a>
-                </div>
-
-                <div class="col-md-12">
-                    <div class="facts">
-                        <div class="col-md-4">
-                            <div class="projects-done">
-                                <h2 class="counter-value text-center">
-                                    240
-                                </h2>
-                                <h3 class="text-center counter-title">
-                                    <i class="fa fa-tasks">
-                                    </i>
-                                    Projects Done
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="projects-done">
-                                <h2 class="counter-value text-center">
-                                    157
-                                </h2>
-                                <h3 class="text-center counter-title">
-                                    <i class="fa fa-group">
-                                    </i>
-                                    Loyal Clients
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="projects-done">
-                                <h2 class="counter-value text-center">
-                                    3560247
-                                </h2>
-                                <h3 class="text-center counter-title">
-                                    <i class="fa fa-code">
-                                    </i>
-                                    Lines Coded
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- About Section End -->
-
-<!-- Conatct Section -->
-<section id="contact">
-    <div class="container text-center">
-        <div class="row">
-            <h1 class="section-title">
-                Contact
-            </h1>
-            <h2 class="section-subtitle">
-                Love to hear from You
-            </h2>
-
-            <div class="col-md-12 wow fadeInUpQuick">
-                <a class="social" href="#" target="_blank">
-                    <i class="fa fa-facebook fa-2x">
-                    </i>
-                </a>
-                <a class="social" href="#" target="_blank">
-                    <i class="fa fa-twitter fa-2x">
-                    </i>
-                </a>
-                <a class="social" href="#" target="_blank">
-                    <i class="fa fa-google-plus fa-2x">
-                    </i>
-                </a>
-                <a class="social" href="#" target="_blank">
-                    <i class="fa fa-linkedin fa-2x">
-                    </i>
-                </a>
-                <a class="social" href="#" target="_blank">
-                    <i class="fa fa-dribbble fa-2x">
-                    </i>
-                </a>
-                <a class="social" href="#" target="_blank">
-                    <i class="fa fa-github fa-2x">
-                    </i>
-                </a>
-            </div>
-
-            <div class="col-md-12 contact-info wow fadeInUpQuick " data-wow-delay=".2s">
-                <p>
-                    <i class="fa fa-map-marker">
-                    </i>
-                    Lisboa, Portugal
-                </p>
-                <p>
-                    <i class="fa fa-envelope">
-                    </i>
-                    olivbruno8@gmail.com
-                </p>
-            </div>
-
-            <form role="form" class="contact-form" method="post">
-                <div class="col-md-6 wow fadeInLeft" data-wow-delay="0.5s">
-                    <div class="form-group">
-                        <div class="controls">
-                            <input type="text" class="form-control" placeholder="Full Name" name="name">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="controls">
-                            <input type="email" class="form-control email" placeholder="Email Address" name="email">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="controls">
-                            <input type="text" class="form-control requiredField" placeholder="Subject" name="subject">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 wow fadeInRight" data-wow-delay="0.8s">
-                    <div class="form-group">
-                        <div class="controls">
-                            <textarea rows="4" class="form-control" placeholder="Message" name="message"></textarea>
-                        </div>
-                    </div>
-                    <button type="submit" id="submit" class="btn btn-lg btn-border">
-                        Send
-                    </button>
-                    <img src="assets/img/ajax-loader.gif" alt="Sending..." class="ajax-loader" style="visibility: hidden;">
-                    <div id="success" style="color:#fff;">
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
-<!-- Conatct Section End-->
 
 <!-- Footer Section -->
 <footer id="matter-footer">
@@ -511,6 +322,7 @@
                 <h3 class="widget-title">
                     Our Location
                 </h3>
+
                 <div class="textwidget">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2673.793186905526!2d-122.27026199999999!3d47.921039!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549aaa98e7706fcd%3A0xdce29d6d3f457ae8!2sHVACUSA!5e0!3m2!1sen!2sbd!4v1419537987498" style="border:0" frameborder="0" height="180" width="300"></iframe>
                 </div>
@@ -532,12 +344,12 @@
 </footer>
 <!-- footer Section End -->
 <script src="assets/js/angular.min.js"></script>
-<script src="assets/js/angular-google-maps-native.min.js"></script>
-<script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChdumDrFouGmTilavqf8yJQcnnupkxJOs&libraries=geometry">
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChdumDrFouGmTilavqf8yJQcnnupkxJOs&libraries=places&signed_in=false&callback=initMap">
 </script>
-
+<script src="assets/js/mapaUtils.js"></script>
 <script src="assets/frontend/app.js"></script>
+
 <script src="db/db_cities_model.js"></script>
 <!-- jQuery Load -->
 <script src="assets/js/jquery-min.js"></script>
