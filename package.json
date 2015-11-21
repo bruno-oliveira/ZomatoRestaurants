@@ -18,7 +18,8 @@
     "node": "0.10.25"
   },
   "devDependencies": {
-    "angular-google-maps-native": "^2.0.0",
-    "angular-smart-table": "^2.1.5"
+    "angular-google-maps": "^2.2.1",
+    "angular-smart-table": "^2.1.5",
+    "lodash": "^3.10.1"
   }
 }

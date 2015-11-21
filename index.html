@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>gm-map {display: block; width: 100%; height: 300px;}</style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>
@@ -185,8 +184,8 @@
 
 <!-- Service Section -->
 
-<section id="search">
-    <div ng-app="app" ng-controller="RestaurantCtrl">
+<section id="search" ng-app="app">
+    <div>
         <div class="container">
             <div class="row">
                 <div class="services-intro col-md-12 text-center wow fadeIn" data-wow-offset="10">
@@ -200,7 +199,7 @@
                     </h3>
                 </div>
 
-                <div class="col-md-12 text-center wow fadeInUp" data-wow-offset="10">
+                <div ng-controller="RestaurantCtrl" class="col-md-12 text-center wow fadeInUp" data-wow-offset="10">
                     <div class="service">
 
                         <div class="input-group">
@@ -219,8 +218,8 @@
                         <table id="restaurantes" st-table="restName" class="table table-striped" hidden>
                             <thead>
                             <tr>
-                                <th>Restaurant name</th>
-                                <th>Cuisine</th>
+                                <th align="center">Restaurant name</th>
+                                <th align="center">Cuisine</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -239,11 +238,12 @@
 
                       <div class="col-md-2"></div>
 
-                      <div ng-controller="RestaurantCtrl2" id="rests">
+
                           <input id="pac-input" class="controls" type="text"
                                  placeholder="Enter a location...">
-                      </div>
-                      <div id="map"></div>
+                            <div id="map"></div>
+
+
 
                     </div>
                 </div>
@@ -343,14 +343,23 @@
     <!-- Copyright Section End-->
 </footer>
 <!-- footer Section End -->
+
 <script src="assets/js/angular.min.js"></script>
+
+<script src="assets/frontend/gservice.js"></script>
+
+<!-- <script src="assets/js/mapaUtils.js"></script> -->
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChdumDrFouGmTilavqf8yJQcnnupkxJOs&libraries=places&signed_in=false&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChdumDrFouGmTilavqf8yJQcnnupkxJOs&libraries=places&geometry&signed_in=false"> // &callback=initMap">
 </script>
-<script src="assets/js/mapaUtils.js"></script>
-<script src="assets/frontend/app.js"></script>
 
 <script src="db/db_cities_model.js"></script>
+
+<script src="bower_components/lodash/lodash.min.js"></script>
+
+
+<script src="assets/frontend/app.js"></script>
+
 <!-- jQuery Load -->
 <script src="assets/js/jquery-min.js"></script>
 

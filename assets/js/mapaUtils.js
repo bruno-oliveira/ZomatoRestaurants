@@ -4,6 +4,7 @@
 // the place ID and other information about the place that the user has
 // selected.
 
+
 function initMap() {
     alert("Creating map");
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -69,6 +70,24 @@ function initMap() {
             place.formatted_address);
         infowindow.open(map, marker);
     });
+}
+
+function teste() {
+    alert("aylmao");
+    var map = document.getElementById('map');
+    var marker = new google.maps.Marker({
+        map: map
+    });
+    marker.addListener('click', function() {
+        infowindow.open(map, marker);
+    });
+    // Set the position of the marker using the place ID and location.
+    marker.setPlace({
+        placeId:  "ChIJM90pe8mtEmsR4MYyFmh9AQU"//,
+        //location: place.geometry.location
+    });
+    marker.setVisible(true);
+
 }
 /**
  * Created by bruno on 19-11-2015.
