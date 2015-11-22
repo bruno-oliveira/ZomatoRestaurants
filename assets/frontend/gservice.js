@@ -14,6 +14,7 @@ angular.module('gservice', [])
 
         // Array of locations obtained from API calls
         var locations = [];
+        var locationsInside=[];
         var LatLngPozVec = [];
 
         // User Selected Location (initialize to center of America)
@@ -57,6 +58,17 @@ angular.module('gservice', [])
                 map: map,
                 title: arrayNames[poz]
             });
+                var markerBulkGreen = new google.maps.Marker({
+                    position: new google.maps.LatLng(arrayCoords[poz][0],arrayCoords[poz][1]),
+                    map: map,
+                    title: arrayNames[poz]
+                });
+                markerBulkGreen.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+                markerBulkGreen.setMap(map);
+                markerBulkGreen.setVisible(true);
+                locationsInside.push(markerBulkGreen);
+                markerBulkGreen.setVisible(false); //the green markers start invisible
+
                 locations.push(markerBulk);
                 LatLngPozVec.push([arrayCoords[poz][0],arrayCoords[poz][1]]);
                 markerBulk.setVisible(true);}
@@ -133,26 +145,33 @@ angular.module('gservice', [])
 
             google.maps.event.addListener(circle, 'radius_changed', function() {
                 var newmarker=new google.maps.Marker({});
-                alert("dcsuishf");
+                alert("Event listener");
                 // var latLngCenter = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
                 var bounds = circle.getBounds();
                 // alert("LAT ALERT is: "+locations[0].position.lat);
                 for(var nmarkers=0; nmarkers< locations.length;nmarkers++){
                     if( bounds.contains(new google.maps.LatLng(LatLngPozVec[nmarkers][0],LatLngPozVec[nmarkers][1])) === true){
                         alert("cmpworked");
-                        newmarker = new google.maps.Marker({
+                      /*  newmarker = new google.maps.Marker({
+                            position: new google.maps.LatLng(LatLngPozVec[nmarkers][0],LatLngPozVec[nmarkers][1]),
+                            map: map
+                        }); */
+                        locations[nmarkers].setVisible(false); //apaga o vermelho existente
+                        locationsInside[nmarkers].setVisible(true); //mostra o verde correspondente
+                        //Cria novo na posição do vermelho
+                 /*       newmarker = new google.maps.Marker({
                             position: new google.maps.LatLng(LatLngPozVec[nmarkers][0],LatLngPozVec[nmarkers][1]),
                             map: map
                         });
-                        locations[nmarkers].setVisible(false);
-                        newmarker.setVisible(true);
                         newmarker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
                         newmarker.setMap(map);
+                        newmarker.setVisible(true); //mostra o novo */
 
                     }
                     else{
-                        locations[nmarkers].setVisible(true);
-                        newmarker.setMap(null);
+                        locationsInside[nmarkers].setVisible(false); //esconde o verde pois este vai sair do circulo
+                        locations[nmarkers].setVisible(true); //mostra o antigo
+                       // newmarker.setMap(null); //REMOVE o verde
                     }
 
                 }
