@@ -10,13 +10,11 @@ angular.module('gservice', [])
         googleMapService.clickLong = 0;
         var map;
         var circle;
+        var markerBulk;
 
         // Array of locations obtained from API calls
         var locations = [];
-
-        // Variables we'll use to help us pan to the right spot
-        var lastMarker;
-        var currentSelectedMarker;
+        var LatLngPozVec = [];
 
         // User Selected Location (initialize to center of America)
         var selectedLat = 37.5;
@@ -27,8 +25,6 @@ angular.module('gservice', [])
         // Refresh the Map with new data. Takes three parameters (lat, long, and filtering results)
         googleMapService.drawMap = function(latitude, longitude){
 
-            // Clears the holding array of locations
-            locations = [];
 
             // Set the selected lat and long equal to the ones provided on the refresh() call
             selectedLat = latitude;
@@ -56,28 +52,16 @@ angular.module('gservice', [])
             // initialize();
             alert("Adding in Bulk");
             for(var poz = 0; poz < arrayCoords.length; poz++){
-            var marker = new google.maps.Marker({
+            markerBulk = new google.maps.Marker({
                 position: new google.maps.LatLng(arrayCoords[poz][0],arrayCoords[poz][1]),
                 map: map,
                 title: arrayNames[poz]
             });
-            marker.setVisible(true);}
+                locations.push(markerBulk);
+                LatLngPozVec.push([arrayCoords[poz][0],arrayCoords[poz][1]]);
+                markerBulk.setVisible(true);}
         };
 
-        var UpdateMarkers=function(arrayCoords){
-            var bounds = circle.getBounds();
-            for(var poz = 0; poz < arrayCoords.length; poz++) {
-                var latLngPoz = new google.maps.LatLng(arrayCoords[poz][0], arrayCoords[poz][1]);
-                if (bounds.contains(latLngPoz) === true) {
-                    var marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(arrayCoords[poz][0], arrayCoords[poz][1]),
-                        map: map,
-                        icon: 'icon_green.png'
-                    });
-                    marker.setVisible(true);
-                }
-            }
-        };
 
         // Initializes the map
         var initialize = function() {
@@ -107,7 +91,6 @@ angular.module('gservice', [])
                 radius: 280
             });
             //circle.addListener('bounds_changed', UpdateMarkers);
-
 
             var marker = new google.maps.Marker({
                 map: map
@@ -148,9 +131,37 @@ angular.module('gservice', [])
                 infowindow.open(map, marker);
             });
 
+            google.maps.event.addListener(circle, 'radius_changed', function() {
+                var newmarker=new google.maps.Marker({});
+                alert("dcsuishf");
+                // var latLngCenter = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
+                var bounds = circle.getBounds();
+                // alert("LAT ALERT is: "+locations[0].position.lat);
+                for(var nmarkers=0; nmarkers< locations.length;nmarkers++){
+                    if( bounds.contains(new google.maps.LatLng(LatLngPozVec[nmarkers][0],LatLngPozVec[nmarkers][1])) === true){
+                        alert("cmpworked");
+                        newmarker = new google.maps.Marker({
+                            position: new google.maps.LatLng(LatLngPozVec[nmarkers][0],LatLngPozVec[nmarkers][1]),
+                            map: map
+                        });
+                        locations[nmarkers].setVisible(false);
+                        newmarker.setVisible(true);
+                        newmarker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+                        newmarker.setMap(map);
+
+                    }
+                    else{
+                        locations[nmarkers].setVisible(true);
+                        newmarker.setMap(null);
+                    }
+
+                }
+            });
 
 
 
-    };
+
+
+        };
         return googleMapService; });
 
