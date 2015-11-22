@@ -15,4 +15,10 @@ It's also expected that some work can be done to index more international locati
 
  [*] As of, today, 18th Nov, the application has the angularMaps integrated, now, it's working on top of the ngMap framework.
  
- [*] As of November 19th, a Wiki that will serve both as an example for the app, as well, as a RoadMap detailing some of the more significant advancements made on each day will start being written more consistently. Some of the days will be reproduced trough the issues... Maybe this repo can go public once the app is finished
+ [*] As of November 19th, a Wiki that will serve both as an example for the app, as well, as a RoadMap detailing some of the more significant advancements made on each day will start being written more consistently. Some of the days will be reproduced trough the issues... Maybe this repo can go public once the app is finished... :D
+ 
+ [*] 22nd November, 11:51, A new version was pushed to master... Major improvements, that include:
+       - Official Google Javascript Maps API integrated;
+       - Restaurant table appears on the map as pins;
+       - Radius of circle now affects markers, as intended;
+       
