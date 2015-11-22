@@ -11,11 +11,15 @@ angular.module('gservice', [])
         var map;
         var circle;
         var markerBulk;
+        var persistGreenPoz=[]; //holds positions for the green markers
 
         // Array of locations obtained from API calls
         var locations = [];
         var locationsInside=[];
         var LatLngPozVec = [];
+        var UsefulInfo = [];
+
+        var targetDiv,targetDivEnd;
 
         // User Selected Location (initialize to center of America)
         var selectedLat = 37.5;
@@ -36,6 +40,16 @@ angular.module('gservice', [])
 
         // Private Inner Functions
         // --------------------------------------------------------------
+        googleMapService.listenSelectors = function(){
+            alert("dysgf");
+            $('#start').on('change', function() {
+                alert( this.value );
+            });
+
+            $('#end').on('change', function() {
+                alert( this.value );
+            });
+        };
 
         googleMapService.AddMarker = function(latitude, longitude,namerest){
            // initialize();
@@ -58,7 +72,9 @@ angular.module('gservice', [])
                 map: map,
                 title: arrayNames[poz]
             });
-                var markerBulkGreen = new google.maps.Marker({
+
+
+               var markerBulkGreen = new google.maps.Marker({
                     position: new google.maps.LatLng(arrayCoords[poz][0],arrayCoords[poz][1]),
                     map: map,
                     title: arrayNames[poz]
@@ -67,7 +83,14 @@ angular.module('gservice', [])
                 markerBulkGreen.setMap(map);
                 markerBulkGreen.setVisible(true);
                 locationsInside.push(markerBulkGreen);
+                var aux_var = locationsInside[poz];
+
                 markerBulkGreen.setVisible(false); //the green markers start invisible
+                UsefulInfo.push([new google.maps.LatLng(arrayCoords[poz][0],arrayCoords[poz][1]), arrayNames[poz]]);
+                persistGreenPoz.push([arrayCoords[poz][0], arrayCoords[poz][1]]);
+                aux_var.addListener(aux_var,'click',function(aux_var){
+                    alert("Teste "+aux_var.position);
+                });
 
                 locations.push(markerBulk);
                 LatLngPozVec.push([arrayCoords[poz][0],arrayCoords[poz][1]]);
@@ -75,13 +98,20 @@ angular.module('gservice', [])
         };
 
 
+
         // Initializes the map
         var initialize = function() {
+            //This will be used to render directions on the map
+            var directionsService = new google.maps.DirectionsService;
+            var directionsDisplay = new google.maps.DirectionsRenderer;
 
-           map = new google.maps.Map(document.getElementById('map'), {
+
+
+            map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: 37.75, lng: -9},
                 zoom: 14
             });
+
 
             var input = document.getElementById('pac-input');
 
@@ -100,7 +130,7 @@ angular.module('gservice', [])
                 strokeColor: '#ff0000',
                 strokeOpacity: 1.0,
                 strokeWeight: 1.5,
-                radius: 280
+                radius: 80
             });
             //circle.addListener('bounds_changed', UpdateMarkers);
 
@@ -109,6 +139,7 @@ angular.module('gservice', [])
             });
             marker.addListener('click', function() {
                 infowindow.open(map, marker);
+
             });
 
             autocomplete.addListener('place_changed', function() {
@@ -134,16 +165,42 @@ angular.module('gservice', [])
                 circle.setVisible(true);
                 circle.setCenter(place.geometry.location);
 
+                var START_ID=place.place_id;
+                alert("START IS "+START_ID);
 
                 marker.bindTo("position", circle, "center");
+               // marker.addListener('click', funcPath);
 
                 infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
                     'Place ID: ' + place.place_id + '<br>' +
                     place.formatted_address);
-                infowindow.open(map, marker);
+                targetDiv = $("#startdiv");
+                targetDiv.html("");
+
+                var arr = [
+                    {val : place.place_id, text: place.name}
+                ];
+
+                var sel = $('<select id=\"start\" onchange=onChangeHandler>').appendTo('body');
+                $(arr).each(function() {
+                    sel.append($("<option>").attr('value',this.val).text(this.text));
+                });
+
+                targetDiv.append(sel);
             });
 
+            var arr = [];
+            //targetDivEnd;
             google.maps.event.addListener(circle, 'radius_changed', function() {
+
+                arr.length=0; //the circle moves, array is cleaned
+
+                targetDivEnd = $("#enddiv");
+                targetDivEnd.html("");
+
+
+
+
                 var newmarker=new google.maps.Marker({});
                 alert("Event listener");
                 // var latLngCenter = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
@@ -152,35 +209,49 @@ angular.module('gservice', [])
                 for(var nmarkers=0; nmarkers< locations.length;nmarkers++){
                     if( bounds.contains(new google.maps.LatLng(LatLngPozVec[nmarkers][0],LatLngPozVec[nmarkers][1])) === true){
                         alert("cmpworked");
-                      /*  newmarker = new google.maps.Marker({
-                            position: new google.maps.LatLng(LatLngPozVec[nmarkers][0],LatLngPozVec[nmarkers][1]),
-                            map: map
-                        }); */
+
+                        arr.push( {val : UsefulInfo[nmarkers][0], text: UsefulInfo[nmarkers][1]});
                         locations[nmarkers].setVisible(false); //apaga o vermelho existente
                         locationsInside[nmarkers].setVisible(true); //mostra o verde correspondente
-                        //Cria novo na posição do vermelho
-                 /*       newmarker = new google.maps.Marker({
-                            position: new google.maps.LatLng(LatLngPozVec[nmarkers][0],LatLngPozVec[nmarkers][1]),
-                            map: map
-                        });
-                        newmarker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
-                        newmarker.setMap(map);
-                        newmarker.setVisible(true); //mostra o novo */
-
                     }
                     else{
                         locationsInside[nmarkers].setVisible(false); //esconde o verde pois este vai sair do circulo
                         locations[nmarkers].setVisible(true); //mostra o antigo
+                       // arr.length(0); //see if this works...
                        // newmarker.setMap(null); //REMOVE o verde
                     }
 
                 }
+                var sel = $('<select id=\"end\" onchange=onChangeHandler>').appendTo('body');
+                $(arr).each(function () {
+                    sel.append($("<option>").attr('value', this.val).text(this.text));
+                });
+
+                targetDivEnd.append(sel);
             });
 
-
-
+            directionsDisplay.setMap(map);
+            var onChangeHandler = function() {
+                calculateAndDisplayRoute(directionsService, directionsDisplay);
+            };
+            document.getElementById('start').addEventListener('change', onChangeHandler);
+            document.getElementById('end').addEventListener('change', onChangeHandler);
+            function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+                directionsService.route({
+                    origin: document.getElementById('start').value,
+                    destination: document.getElementById('end').value,
+                    travelMode: google.maps.TravelMode.DRIVING
+                }, function(response, status) {
+                    if (status === google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                    } else {
+                        window.alert('Directions request failed due to ' + status);
+                    }
+                });
+            }
 
 
         };
+
         return googleMapService; });
 

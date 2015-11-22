@@ -241,12 +241,26 @@
 
                       <div class="col-md-2"></div>
 
+                      <div id="floating-panel">
 
                           <input id="pac-input" class="controls" type="text"
                                  placeholder="Enter a location...">
-                            <div id="map"></div>
+                          <div id="map"></div>
+
+                          <p>Choose the nearby restaurant to go to: </p>
+                         <b>Start:</b>
+                          <div id="startdiv">
+                              </div>
+
+                          <b>End: </b>
+                          <div id="enddiv">
+                          </div>
 
 
+
+
+
+                      </div>
 
                     </div>
                 </div>
@@ -353,7 +367,7 @@
 
 <!-- <script src="assets/js/mapaUtils.js"></script> -->
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChdumDrFouGmTilavqf8yJQcnnupkxJOs&libraries=places&geometry&signed_in=false"> // &callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChdumDrFouGmTilavqf8yJQcnnupkxJOs&libraries=places&geometry&directions&signed_in=false"> // &callback=initMap">
 </script>
 
 <script src="db/db_cities_model.js"></script>

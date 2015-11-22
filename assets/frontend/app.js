@@ -26,7 +26,6 @@ app.controller('RestaurantCtrl', function($scope,$http,gservice) {
                 gservice.AddMarkersBulk(arrayCoords,
                     arrayNames
                 );
-
             })
 
         })
