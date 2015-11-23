@@ -20,6 +20,7 @@ angular.module('gservice', [])
         var UsefulInfo = [];
 
         var targetDiv,targetDivEnd;
+        var tableDiv;
 
         // User Selected Location (initialize to center of America)
         var selectedLat = 37.5;
@@ -228,27 +229,40 @@ angular.module('gservice', [])
                 });
 
                 targetDivEnd.append(sel);
+
+                tableDiv=$("#table");
+                tableDiv.html("");
+
+                var aux = "";
+                for(var k = 0; k < arr.length; k++){
+                    aux += "<tr> <td>"+arr[k].text+"</td> </tr>";
+                }
+                aux += "</tbody>";
+               // tableDiv.append(aux);
+                var endtab = "</table";
+                var teste = $('<table id=\"restaurantes2\" st-table=\"restName\" class=\"table table-striped\"> <thead> <tr> <th align=\"center\">Restaurant name</th> </tr> </thead> <tbody> '+aux+endtab);
+
+                tableDiv.append(teste);
+                /*<table id="restaurantes" st-table="restName" class="table table-striped" hidden>
+                 <thead>
+                 <tr>
+                 <th align="center">Restaurant name</th>
+                 <th align="center">Cuisine</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr ng-repeat="x in restName">
+                 <td><a href={{x.restaurant.url}} >
+                 <div style="height:100%;width:100%">
+                 {{ x.restaurant.name }}
+                 </div>
+                 </a></td>
+                 <td>{{ x.restaurant.cuisines }}</td>
+                 </tr>
+                 </tbody>
+                 </table>*/
             });
 
-            directionsDisplay.setMap(map);
-            var onChangeHandler = function() {
-                calculateAndDisplayRoute(directionsService, directionsDisplay);
-            };
-            document.getElementById('start').addEventListener('change', onChangeHandler);
-            document.getElementById('end').addEventListener('change', onChangeHandler);
-            function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-                directionsService.route({
-                    origin: document.getElementById('start').value,
-                    destination: document.getElementById('end').value,
-                    travelMode: google.maps.TravelMode.DRIVING
-                }, function(response, status) {
-                    if (status === google.maps.DirectionsStatus.OK) {
-                        directionsDisplay.setDirections(response);
-                    } else {
-                        window.alert('Directions request failed due to ' + status);
-                    }
-                });
-            }
 
 
         };
