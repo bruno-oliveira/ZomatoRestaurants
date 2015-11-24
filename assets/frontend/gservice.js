@@ -175,19 +175,18 @@ angular.module('gservice', [])
                 infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
                     'Place ID: ' + place.place_id + '<br>' +
                     place.formatted_address);
-                targetDiv = $("#startdiv");
+                targetDiv = $("#start"); //old = start
                 targetDiv.html("");
 
                 var arr = [
                     {val : place.place_id, text: place.name}
                 ];
 
-                var sel = $('<select id=\"start\" onchange=onChangeHandler>').appendTo('body');
                 $(arr).each(function() {
-                    sel.append($("<option>").attr('value',this.val).text(this.text));
+                    targetDiv.append($("<option>").attr('value',this.val).text(this.text));
                 });
 
-                targetDiv.append(sel);
+                //targetDiv.append(sel);
             });
 
             var arr = [];
@@ -196,7 +195,7 @@ angular.module('gservice', [])
 
                 arr.length=0; //the circle moves, array is cleaned
 
-                targetDivEnd = $("#enddiv");
+                targetDivEnd = $("#end");
                 targetDivEnd.html("");
 
 
@@ -223,24 +222,23 @@ angular.module('gservice', [])
                     }
 
                 }
-                var sel = $('<select id=\"end\" onchange=onChangeHandler>').appendTo('body');
                 $(arr).each(function () {
-                    sel.append($("<option>").attr('value', this.val).text(this.text));
+                    targetDivEnd.append($("<option>").attr('value', this.val).text(this.text));
                 });
 
-                targetDivEnd.append(sel);
-
+              //  targetDivEnd.append(sel);
+                /*
                 tableDiv=$("#table");
                 tableDiv.html("");
 
                 var aux = "";
                 for(var k = 0; k < arr.length; k++){
-                    aux += "<tr> <td>"+arr[k].text+"</td> </tr>";
+                    aux += "<tr id=\"+k+\"> <td id=\"+k+\">"+arr[k].text+"</td> </tr>";
                 }
                 aux += "</tbody>";
                // tableDiv.append(aux);
                 var endtab = "</table";
-                var teste = $('<table id=\"restaurantes2\" st-table=\"restName\" class=\"table table-striped\"> <thead> <tr> <th align=\"center\">Restaurant name</th> </tr> </thead> <tbody> '+aux+endtab);
+                var teste = $('<table id=\"restaurantes2\" st-table=\"restName\" class=\"table table-striped\"> <thead> <tr> <th align=\"right\">Restaurant name</th> </tr> </thead> <tbody> '+aux+endtab);
 
                 tableDiv.append(teste);
                 /*<table id="restaurantes" st-table="restName" class="table table-striped" hidden>

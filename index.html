@@ -215,7 +215,7 @@
                         <p></p>
                         <p></p>
 
-                  <div>
+                  <div id="flagdiv">
 
                       <div class="col-md-4">
                         <table id="restaurantes" st-table="restName" class="table table-striped" hidden>
@@ -247,17 +247,26 @@
                                  placeholder="Enter a location...">
                           <div id="map"></div>
 
+                            <p></p>
+                      <p>Choose the nearby restaurant to go to: </p>
 
-                        <div class="col-md-6" id="table" style="float:right"></div>
+                      <b>Start: </b>
+                      <select id="start"></select>
+
+                      <b>End: </b>
+                      <select id="end"></select>
+
+                      <!--  <div class="col-md-6" id="table" style="float:right"></div> -->
+                            <p></p>
+                            <p></p>
+
+                      <div class="col-md-6" style="width: 600px; float:right">
+     <div id="mapRoute" style="width: 280px; height: 400px; float: left;"></div>
+     <div id="panel" style="width: 280px; float: right;"></div>
+   </div>
+                   <!--   <div class="col-md-6" id="mapRoute"></div> -->
                       <!--
-                          <p>Choose the nearby restaurant to go to: </p>
-                         <b>Start:</b>
-                          <div id="startdiv">
-                              </div>
 
-                          <b>End: </b>
-                          <div id="enddiv">
-                          </div>
                           -->
 
 
@@ -368,8 +377,10 @@
 <script src="assets/js/angular.min.js"></script>
 
 <script src="assets/frontend/gservice.js"></script>
+<script src="assets/frontend/gserviceRoute.js"></script>
 
 <!-- <script src="assets/js/mapaUtils.js"></script> -->
+
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChdumDrFouGmTilavqf8yJQcnnupkxJOs&libraries=places&geometry&directions&signed_in=false"> // &callback=initMap">
 </script>

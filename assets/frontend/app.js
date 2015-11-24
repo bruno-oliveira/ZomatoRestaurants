@@ -1,6 +1,6 @@
-var app = angular.module('app', ['gservice']);
+var app = angular.module('app', ['gservice', 'gserviceRoute']);
 
-app.controller('RestaurantCtrl', function($scope,$http,gservice) {
+app.controller('RestaurantCtrl', function($scope,$http,gservice,gserviceRoute) {
      var cityID = -1;
 
     $scope.GetCities=function(city) {
@@ -26,6 +26,7 @@ app.controller('RestaurantCtrl', function($scope,$http,gservice) {
                 gservice.AddMarkersBulk(arrayCoords,
                     arrayNames
                 );
+                gserviceRoute.drawMap(37.75,-9.1);
             })
 
         })
