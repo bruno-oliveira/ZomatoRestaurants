@@ -24,4 +24,4 @@ It's also expected that some work can be done to index more international locati
        - Restaurant table appears on the map as pins;
        
        - Radius of circle now affects markers, as intended;
-       
+ [*] 27th November, 14:00, I can use https://ngrok.com/ to make the app go live and also, I can ditch the Database entirely, using no persistency layer;
